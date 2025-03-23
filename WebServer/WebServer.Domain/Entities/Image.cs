@@ -13,6 +13,6 @@ namespace WebServer.Domain.Entities
         public required string Url { get; set; }
         public required string Key { get; set; }
         public required string ContentType { get; set; }
-
+        public List<UserReaction> Reactions { get; set; } = default!;
     }
 }

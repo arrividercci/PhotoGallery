@@ -13,5 +13,6 @@ namespace WebServer.Domain.Entities
         public List<Album>? Albums { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpireTime { get; set; }
+        public List<UserReaction> Reactions { get; set; } = default!;
     }
 }

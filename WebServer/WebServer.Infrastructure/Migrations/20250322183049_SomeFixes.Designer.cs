@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebServer.Infrastructure;
@@ -11,9 +12,11 @@ using WebServer.Infrastructure;
 namespace WebServer.Infrastructure.Migrations
 {
     [DbContext(typeof(PhotoGalleryDbContext))]
-    partial class PhotoGalleryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250322183049_SomeFixes")]
+    partial class SomeFixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,24 +280,6 @@ namespace WebServer.Infrastructure.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("WebServer.Domain.Entities.UserReaction", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("text");
-
-                    b.Property<int>("ImageId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ReactionType")
-                        .HasColumnType("integer");
-
-                    b.HasKey("UserId", "ImageId");
-
-                    b.HasIndex("ImageId");
-
-                    b.ToTable("UserReaction");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -364,40 +349,14 @@ namespace WebServer.Infrastructure.Migrations
                         .HasForeignKey("AlbumId");
                 });
 
-            modelBuilder.Entity("WebServer.Domain.Entities.UserReaction", b =>
-                {
-                    b.HasOne("WebServer.Domain.Entities.Image", "Image")
-                        .WithMany("Reactions")
-                        .HasForeignKey("ImageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebServer.Domain.Entities.User", "User")
-                        .WithMany("Reactions")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Image");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("WebServer.Domain.Entities.Album", b =>
                 {
                     b.Navigation("Images");
                 });
 
-            modelBuilder.Entity("WebServer.Domain.Entities.Image", b =>
-                {
-                    b.Navigation("Reactions");
-                });
-
             modelBuilder.Entity("WebServer.Domain.Entities.User", b =>
                 {
                     b.Navigation("Albums");
-
-                    b.Navigation("Reactions");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,7 +7,13 @@ namespace WebServer.Application.Mappers
     {
         public static AlbumModel? ToModel(this Album? album)
         {
-            return album == null ? null : new AlbumModel();
+            return album == null ? null : new AlbumModel() 
+            {
+                Id = album.Id,
+                AuthorId = album.AuthorId,
+                Name = album.Name,
+                Images = album.Images.Select(image => image.ToModel()).ToList(),
+            };
         }
 
         public static Album ToEntity(this AlbumCreateModel albumCreateModel, User author)
