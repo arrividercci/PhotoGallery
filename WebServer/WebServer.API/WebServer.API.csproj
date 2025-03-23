@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.Postrgres.Infrastructure\Common.Postrgres.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Storage\Storage.Azure\Storage.Azure.csproj" />
     <ProjectReference Include="..\WebServer.Application\WebServer.Application.csproj" />
     <ProjectReference Include="..\WebServer.Infrastructure\WebServer.Infrastructure.csproj" />

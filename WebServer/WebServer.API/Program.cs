@@ -5,7 +5,6 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 using WebServer.Infrastructure;
-using WebServer.API.Extensions;
 using WebServer.Domain.Entities;
 using WebServer.Infrastructure.Interfaces;
 using WebServer.Infrastructure.Repositories;
@@ -18,6 +17,7 @@ using Storage.Azure;
 using Microsoft.Extensions.Azure;
 using WebServer.API.Middlewares;
 using WebServer.API.Helpers;
+using Common.Postrgres.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

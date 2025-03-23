@@ -1,4 +1,4 @@
-﻿using WebServer.Domain.Abstraction;
+﻿using Common.Data;
 
 namespace WebServer.Domain.Entities
 {

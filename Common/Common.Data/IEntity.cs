@@ -1,4 +1,4 @@
-﻿namespace WebServer.Domain.Abstraction
+﻿namespace Common.Data
 {
     /// <summary>
     ///     IEntity interface.

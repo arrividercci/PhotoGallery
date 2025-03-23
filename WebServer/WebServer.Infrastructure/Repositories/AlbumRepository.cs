@@ -2,6 +2,7 @@
 using WebServer.Infrastructure.Interfaces;
 using WebServer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Common.Data;
 
 namespace WebServer.Infrastructure.Repositories
 {

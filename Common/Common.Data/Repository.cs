@@ -1,10 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Linq.Expressions;
-using WebServer.Infrastructure.Interfaces;
-using WebServer.Domain.Abstraction;
 
-namespace WebServer.Infrastructure.Repositories
+namespace Common.Data
 {
     public class Repository<TEntity, TKey>(DbContext dbContext, ILogger logger) : IRepository<TEntity, TKey>
         where TEntity : Entity<TKey> where TKey : struct

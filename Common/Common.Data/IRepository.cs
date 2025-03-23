@@ -1,7 +1,6 @@
 ﻿using System.Linq.Expressions;
-using WebServer.Domain.Abstraction;
 
-namespace WebServer.Infrastructure.Interfaces
+namespace Common.Data
 {
     /// <summary>
     /// Base repository interface for generic data access.

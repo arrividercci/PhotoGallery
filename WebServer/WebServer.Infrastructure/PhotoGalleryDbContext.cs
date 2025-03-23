@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Common.Data;
+using Microsoft.EntityFrameworkCore;
 using WebServer.Domain.Entities;
-using WebServer.Infrastructure.Data;
 
 namespace WebServer.Infrastructure
 {

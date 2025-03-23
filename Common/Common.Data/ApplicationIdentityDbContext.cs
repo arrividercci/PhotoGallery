@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebServer.Infrastructure.Data
+namespace Common.Data
 {
     public abstract class ApplicationIdentityDbContext<TIdentity>(DbContextOptions options) : IdentityDbContext<TIdentity>(options) where TIdentity : IdentityUser
     {

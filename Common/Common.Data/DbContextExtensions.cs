@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebServer.Domain.Abstraction;
 
-namespace WebServer.Infrastructure.Data
+namespace Common.Data
 {
     public static class DbContextExtensions
     {

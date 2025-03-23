@@ -1,4 +1,5 @@
-﻿using WebServer.Domain.Entities;
+﻿using Common.Data;
+using WebServer.Domain.Entities;
 
 namespace WebServer.Infrastructure.Interfaces
 {
